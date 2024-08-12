@@ -1,0 +1,136 @@
+body{
+    font-family: "Space Mono", monospace;
+    font-weight: 700;
+    font-style: normal;
+    background-color: hsl(185, 41%, 84%);
+}
+#logo{
+    margin: auto;
+    display: block;
+    align-self: center;
+    margin-bottom: 20px;
+}
+.container{
+    width: 60%;
+    margin: auto;
+    display: flex;
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+}
+.left{
+    padding-right: 30px;
+    flex: 2;
+    color: hsl(184, 14%, 56%);
+}
+.left > h2{
+    margin: 0px;
+}
+.input-div{
+    position: relative;
+}
+.input-div > img{
+    position: absolute;
+    left: 10px;
+    height: 20px;
+    /* bottom: 0.5px; */
+    top: 5px;
+}
+.pct-grid{
+    width: 100%;
+    display: grid;
+    grid-template-columns: minmax(0,1fr) minmax(0,1fr) minmax(0,1fr);
+    gap: 10px;
+}
+.grid-item{
+    background-color: hsl(183, 100%, 15%);
+    margin-bottom: 15px;
+    color: white;
+    border-radius: 2px;
+    text-align: center;
+    padding: 5px 0px;
+}
+.active{
+    background-color: hsl(172, 67%, 45%);
+}
+#custom-input-div{
+    padding: 0px;
+}
+.right{
+    flex: 2;
+    background-color: hsl(183, 100%, 15%);
+    border-radius: 10px;
+    padding: 25px;
+}
+.right-row{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 28px;
+}
+.right-head{
+    color: white;
+    margin-bottom: 4px;
+}
+.right-person{
+    color: hsl(184, 14%, 56%);
+    margin: 0px;
+    font-size: 14px;
+}
+.right-price{
+    color: hsl(172, 67%, 45%);
+    font-size: 24px;
+    font-style: normal;
+}
+.right-price > h1{
+    margin: 0px;
+}
+#reset-btn{
+    background-color: hsl(172, 67%, 45%);
+    color: black;
+    font-weight: 700;
+    width: 100%;
+    border: 0px solid hsl(172, 67%, 45%);
+    border-radius: 2px;
+    padding: 10px 0px;
+}
+@media screen and (max-width: 768px) {
+    .container{
+        width: 90%;
+        flex-direction: column;
+    }
+    .left{
+        margin-bottom: 20px;
+    }
+}
+
+/* Inputs */
+input{
+    background-color: hsl(189, 41%, 97%);
+    border: 0px solid hsl(189, 41%, 97%);
+    color: hsl(183, 100%, 15%);
+    font-size: 16px;
+    padding: 0px;
+    /* outline: none; */
+}
+input:focus{
+    outline-color: hsl(172, 67%, 45%);
+}
+.main-input{
+    height: 30px;
+    width: 100%;
+    border-radius: 2px;
+}
+.main-input::-webkit-input-placeholder, .main-input, #custom-input{
+    text-align: right;
+    font-weight: 700;
+    font-family: "Space Mono", monospace;
+    font-size: 18px;
+    margin-right: 5px;
+}
+#custom-input{
+    max-width: 100%;
+    height: 100%;
+    overflow: hidden;
+    text-align: center;
+    background-color: hsl(189, 41%, 97%);
+}
