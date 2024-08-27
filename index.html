@@ -8,7 +8,7 @@
 
 	<!-- <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png"> -->
 
-	<title>Frontend Mentor | Tip calculator app</title>
+	<title>Tip calculator app</title>
 
 	<!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
 	<style>
@@ -34,18 +34,18 @@
 			<h2 id="bill">Bill</h2>
 			<div id="amt-input-wrapper" class="input-div">
 				<img src="./images/icon-dollar.svg">
-				<input placeholder="0" id="totalBill" class="main-input">
+				<input placeholder="0" id="totalBill" class="main-input" oninput="Hello()">
 			</div>
 			<p id="select-tip">Select Tip %</p>
 			<div class="percent-cont">
 				<div class="pct-grid">
-					<div class="grid-item">5%</div>
-					<div class="grid-item">10%</div>
-					<div class="grid-item">15%</div>
-					<div class="grid-item">25%</div>
-					<div class="grid-item">50%</div>
+					<button class="grid-item" onclick="Hey(event)" value="5">5%</button>
+					<button class="grid-item" onclick="Hey(event)" value="10">10%</button>
+					<button class="grid-item" onclick="Hey(event)" value="15">15%</button>
+					<button class="grid-item" onclick="Hey(event)" value="25">25%</button>
+					<button class="grid-item" onclick="Hey(event)" value="50">50%</button>
 					<div class="grid-item" id="custom-input-div">
-						<input placeholder="Custom" id="custom-input"> 
+						<input type="number" placeholder="Custom" id="custom-input" oninput="Hellox(event)" > 
 					</div>
 				</div>
 			</div>
@@ -53,7 +53,7 @@
 				<p id="numberOfPeople">Number of People</p>
 				<div id="num-input-wrapper" class="input-div">
 					<img src="./images/icon-person.svg">
-					<input placeholder="0" id="people" class="main-input" oninput="Hello()">
+					<input placeholder="0" id="people-input" class="main-input" oninput="Hello()">
 				</div>
 			</div>
 		</div>
@@ -64,7 +64,7 @@
 					<p class="right-person">/ person</p>
 				</div>
 				<div class="right-price">
-					<h1 id="total-amount">$4.27</h1>
+					<h1 id="tip-amount">$4.27</h1>
 				</div>
 			</div>
 			<div class="right-row">
@@ -73,7 +73,7 @@
 					<p class="right-person">/ person</p>
 				</div>
 				<div class="right-price">
-					<h1 id="perPerson">$32.79</h1>
+					<h1 id="total-amount">$32.79</h1>
 				</div>
 			</div>
 			<button id="reset-btn">RESET</button>
