@@ -1,33 +1,52 @@
-// Input Boxes
-const bill = document.getElementById("totalBill");
-const people = document.getElementById("people");
+// Inputs
+const totalBill = document.getElementById("totalBill");
+let customInput = document.getElementById("custom-input");
+const peopleInput = document.getElementById("people-input");
 
-const tips = document.querySelectorAll(".grid-item");
+const buttons = document.querySelectorAll(".grid-item");
+// console.log(buttons);
 
-// The Values 
+// Text
+const tipAmount = document.getElementById("tip-amount");
 const totalAmount = document.getElementById("total-amount");
-const perPerson = document.getElementById("perPerson")
 
+// bill, tip, noOfPeoople
+function calculateTip() {
+    let tipPerPerson = parseFloat(
+        (customInput * totalBill.value) / (100 * peopleInput.value)
+    ).toFixed(2);
+    let totalPerPerson = parseFloat(
+        ((1 + customInput / 100) * totalBill.value) / peopleInput.value
+    ).toFixed(2);
+    return [tipPerPerson, totalPerPerson];
+}
 
-let tip = 5;
-for (let i=0; i<tips.length; i++){
-    tips[i].addEventListener("click", function(e){
-        for (let i=0; i<tips.length-1; i++){
-            tips[i].classList.remove("active");
-        };
-        e.target.classList.add("active");
-        console.log(Number(e.target.innerText.slice(0,-1)));
-        tip = Number(e.target.innerText.slice(0,-1));
-    });
-};
-function Hello(){
-    let billVal = bill.value;
-    let total = ((1+(tip/100))*billVal).toFixed(2);
-    let each = total/people.value;
-    if (each == Infinity){
-        each = total;
+function Hello() {
+    const [tip, total] = calculateTip();
+    console.log(peopleInput.value);
+    console.log(totalBill.value);
+    if (totalBill.value && peopleInput.value) {
+        tipAmount.textContent = "$" + `${tip}`;
+        totalAmount.textContent = "$" + `${total}`;
     }
-    totalAmount.innerText = "$"+total
-    perPerson.innerText = "$"+each.toFixed(2)
-    console.log(each.toFixed(2));
+}
+
+function Hellox(e) {
+    console.log(e.target.value);
+    customInput = Number(e.target.value);
+}
+
+function Hey(e) {
+    customInput = Number(e.target.value);
+    Hello()
+
+    for (let i = 0; i < buttons.length; i++) {
+        if (buttons[i].classList.contains("active")) {
+            buttons[i].classList.remove("active");
+        }
+        if (buttons[i].value == customInput) {
+            buttons[i].classList.add("active")
+            buttons[i].classList.add("active");
+        }
+    }
 }
